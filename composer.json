@@ -1,0 +1,22 @@
+{
+    "name": "anikgoel/sportsdirectinc-php",
+    "description": "Sports Direct Inc Library to be used in php",
+    "homepage": "https://github.com/anikgoel/sportsdirectinc-php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anik Goel",
+            "email": "anikgoel19@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.3|^7.0",
+        "guzzlehttp/guzzle": "~5.0|~6.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}
