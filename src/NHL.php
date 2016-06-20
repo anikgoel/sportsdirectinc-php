@@ -41,4 +41,9 @@ class NHL extends Base {
         return $this->_sendHit($url);
     }
 
+    public function getGameSchedule($days = NULL) {
+        $url = $this->base_url . "/" . $this->api_version . $this->mid_url_link . "/schedule/" . "schedule_NHL" . (($days == NULL) ? "" : "_{$days}_days") . ".xml?apiKey=" . $this->api_key;
+        return $this->_sendHit($url);
+    }
+
 }
