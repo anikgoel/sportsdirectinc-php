@@ -31,8 +31,8 @@ class NHL extends Base {
         return $this->_sendHit($url);
     }
 
-    public function getBoxScore($season, $competition_id) {
-        $url = $this->base_url . "/" . $this->api_version . $this->mid_url_link . "/boxscores/" . $season . "/boxscore_NHL_$competition_id.xml?apiKey=" . $this->api_key;
+    public function getBoxScoreAtomFeed($updated_since = NULL) {
+        $url = $this->base_url_atom . "/hockey/nhl/boxscores&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         return $this->_sendHit($url);
     }
 

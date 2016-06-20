@@ -13,6 +13,7 @@ use GuzzleHttp\Exception\ClientException;
 class Base {
 
     protected $base_url = "http://xml.sportsdirectinc.com/sport";
+    protected $base_url_atom = "http://xml.sportsdirectinc.com/Atom?feed=";
 
     protected function _sendHit($url) {
         $client = new \GuzzleHttp\Client();
