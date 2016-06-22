@@ -23,7 +23,7 @@ class Base {
             return FALSE;
         }
         if ($res->getStatusCode() == 200) {
-            return new \SimpleXMLElement($res->getBody());
+            return json_decode(json_encode(new \SimpleXMLElement($res->getBody())), 1);
         } else {
             return FALSE;
         }
