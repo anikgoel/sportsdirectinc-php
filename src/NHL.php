@@ -32,7 +32,7 @@ class NHL extends Base {
     }
 
     public function getBoxScoreAtomFeed($updated_since = NULL) {
-        $url = $this->base_url_atom . "/hockey/nhl/boxscores&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
+        $url = $this->base_url_atom . "/hockey/nhl/boxscores?apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         return $this->_sendHit($url);
     }
 
