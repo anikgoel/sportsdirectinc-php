@@ -40,7 +40,7 @@ class NHL extends Base {
         $url = $this->base_url_atom . "/hockey/nhl/injuries&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         $data = $this->_sendHit($url);
         if (isset($data['entry']['id'])) {
-            return $this->_sendHit($data['entry']['id']);
+            return array($this->_sendHit($data['entry']['id']), $data);
         } else {
             return FALSE;
         }
