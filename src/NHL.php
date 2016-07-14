@@ -36,6 +36,16 @@ class NHL extends Base {
         return $this->_sendHit($url);
     }
 
+    public function getInjuryFeed($updated_since = NULL) {
+        $url = $this->base_url_atom . "/hockey/nhl/injuries&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
+        $data = $this->_sendHit($url);
+        if (isset($data['entry']['id'])) {
+            return $this->_sendHit($data['entry']['id']);
+        } else {
+            return FALSE;
+        }
+    }
+
     public function getTeamPlayers($season, $team_id) {
         $url = $this->base_url . "/" . $this->api_version . $this->mid_url_link . "/players/" . $season . "/players_{$team_id}_NHL.xml?apiKey=" . $this->api_key;
         return $this->_sendHit($url);
