@@ -40,6 +40,10 @@ class NHL extends Base {
         $url = $this->base_url_atom . "/hockey/nhl/standings&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         return $this->_sendHit($url);
     }
+    public function getPlayerStatsAtomFeed($updated_since = NULL) {
+        $url = $this->base_url_atom . "/hockey/nhl/player-stats&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
+        return $this->_sendHit($url);
+    }
 
     public function getInjuryFeed($updated_since = NULL) {
         $url = $this->base_url_atom . "/hockey/nhl/injuries&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
