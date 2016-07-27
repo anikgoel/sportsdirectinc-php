@@ -35,13 +35,24 @@ class NHL extends Base {
         $url = $this->base_url_atom . "/hockey/nhl/boxscores&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         return $this->_sendHit($url);
     }
-    
+
     public function getStandingAtomFeed($updated_since = NULL) {
         $url = $this->base_url_atom . "/hockey/nhl/standings&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         return $this->_sendHit($url);
     }
+
     public function getPlayerStatsAtomFeed($updated_since = NULL) {
         $url = $this->base_url_atom . "/hockey/nhl/player-stats&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
+        return $this->_sendHit($url);
+    }
+
+    public function getTeamsAtomFeed($updated_since = NULL) {
+        $url = $this->base_url_atom . "/hockey/nhl/teams&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
+        return $this->_sendHit($url);
+    }
+
+    public function getPlayersAtomFeed($updated_since = NULL) {
+        $url = $this->base_url_atom . "/hockey/nhl/players&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         return $this->_sendHit($url);
     }
 
