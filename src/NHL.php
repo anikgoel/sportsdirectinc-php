@@ -31,6 +31,10 @@ class NHL extends Base {
         return $this->_sendHit($url);
     }
 
+    public function getDrafterPlayerAtomFeed($updated_since = NULL) {
+        $url = $this->base_url_atom . "/hockey/nhl/drafts&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
+        return $this->_sendHit($url);
+    }
     public function getBoxScoreAtomFeed($updated_since = NULL) {
         $url = $this->base_url_atom . "/hockey/nhl/boxscores&apiKey=" . $this->api_key . (($updated_since != NULL) ? "&newerThan=$updated_since" : "");
         return $this->_sendHit($url);
